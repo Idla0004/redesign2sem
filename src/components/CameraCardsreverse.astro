@@ -1,0 +1,153 @@
+---
+const { src, headline, bodytext, hoverSrc } = Astro.props;
+import Circle from "../img/circleelement.webp";
+---
+
+<section class="camera-section">
+  <div class="img-text-container">
+    <div class="text-container">
+      <h2>{headline}</h2>
+      <p>{bodytext}</p>
+    </div>
+    <div class="img-container">
+      <div class="camera-img-wrapper">
+        <img src={src} alt="Camera" class="Camimg" />
+        <img src={hoverSrc} alt="Camera Hover" class="hover-img" />
+      </div>
+      <img src={Circle.src} alt="Circle element" class="Circle" />
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const imgContainers = document.querySelectorAll(".img-container");
+
+    imgContainers.forEach((container) => {
+      container.addEventListener("touchstart", function (e) {
+        const hoverImg = this.querySelector(".hover-img");
+        if (hoverImg) {
+          hoverImg.style.opacity = "1";
+        }
+      });
+
+      container.addEventListener("touchmove", function (e) {
+        const hoverImg = this.querySelector(".hover-img");
+        if (hoverImg) {
+          hoverImg.style.opacity = "1";
+        }
+      });
+
+      container.addEventListener("touchend", function (e) {
+        const hoverImg = this.querySelector(".hover-img");
+        if (hoverImg) {
+          hoverImg.style.opacity = "0";
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .camera-section {
+    margin-bottom: 3rem;
+    overflow: visible;
+  }
+
+  .img-text-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 20px 0px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .img-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+  }
+
+  .Camimg {
+    width: auto;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+    transform: scaleX(-1);
+    left: 40px;
+  }
+
+  .hover-img {
+    position: absolute;
+    width: auto;
+    max-width: 300px;
+    height: auto;
+    top: 0;
+    left: 40px;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    transform: scaleX(-1);
+  }
+
+  .img-text-container:hover .hover-img {
+    opacity: 1;
+  }
+
+  .Circle {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    bottom: -20px;
+    right: -90px;
+    z-index: 1;
+  }
+
+  .text-container {
+    padding: 20px 10px;
+  }
+
+  .text-container h2 {
+    margin-top: 0;
+  }
+
+  @media (max-width: 1000px) {
+    .img-text-container {
+      padding: 20px;
+      flex-direction: column;
+    }
+    .img-container {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      margin-left: 50px;
+      order: -1;
+    }
+    .Camimg,
+    .hover-img {
+      margin: auto;
+      max-width: 300px;
+      width: 100%;
+      left: 0%;
+    }
+    .Circle {
+      bottom: auto;
+      left: -5%;
+      max-width: 100%;
+    }
+
+    .text-container h2 {
+      margin-top: 20px;
+    }
+  }
+</style>

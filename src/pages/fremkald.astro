@@ -1,0 +1,159 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../css/general.css";
+import filmimg from "../img/filmrulle.webp";
+import CTAbtn from "../components/CTAbtn.astro";
+import Priskort from "../components/Priskort.astro";
+---
+
+<Layout>
+  <section class="fremkald-side">
+    <div class="grid-intro">
+      <div class="heading-text">
+        <h1>FREMKALD</h1>
+        <p>
+          Vi har vores eget laboratorie hvor vi fremkalder billeder fra digital-
+          og analog kamera. Vi fremkalder også billeder direkte fra din
+          smartphone! Få dine minder fremkaldt – aflevér din film i butikken i
+          dag!
+        </p>
+
+        <div class="box flex">
+          <CTAbtn href="#film-pris" aria-label="Film">Film</CTAbtn>
+          <CTAbtn href="#digital-pris" aria-label="Digitalt medie"
+            >Digitalt medie</CTAbtn
+          >
+          <CTAbtn href="#video-pris" aria-label="Båndvideo">Båndvideo</CTAbtn>
+        </div>
+
+        <p class="obs-text">
+          OBS! Der pålægges gebyr på alt sort hvid film og ekstra leverings tid
+          (3-5 dage i stedet for 1-2 dage)
+        </p>
+      </div>
+
+      <div class="img-container">
+        <img src={filmimg.src} alt="Film rulle illustration" class="roll-img" />
+      </div>
+    </div>
+
+    <Priskort />
+
+    <section id="gul-kasse">
+      <h3>FILM TIL DIT KAMERA</h3>
+      <p>
+        Når du køber et analog kamera, skal der film til, for at det kan bruges.
+      </p>
+      <p>Vi bestræber os på at have disse film hjemme, i 135mm og 120mm:</p>
+
+      <ul>
+        <li>Fuji</li>
+        <li>Portra</li>
+        <li>Kodak</li>
+        <li>Illford</li>
+      </ul>
+    </section>
+  </section>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #film-pris,
+    #digital-pris,
+    #video-pris {
+      scroll-margin-top: 60px;
+    }
+
+    .fremkald-side {
+      margin: auto 130px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    section {
+      max-width: 1300px;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      flex-basis: max-content;
+    }
+
+    .img-container {
+      display: flex;
+    }
+
+    .roll-img {
+      height: clamp(250px, 30vw, 450px);
+      background-color: #e5f3ff;
+      padding: 30px 50px;
+      border-radius: 15px;
+      position: relative;
+      top: 7%;
+      margin-left: 40px;
+    }
+
+    #gul-kasse {
+      background-color: #ffd87d;
+      padding: 50px;
+      border-radius: 15px;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    ul,
+    li {
+      font-family: montserrat-r;
+      font-size: 20px;
+    }
+
+    .grid-intro {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      margin-bottom: 3rem;
+    }
+
+    .grid-intro div:last-child {
+      justify-self: right;
+    }
+
+    .obs-text {
+      font-size: clamp(20px, 22px, 24px);
+      font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+      .fremkald-side {
+        margin: auto;
+        width: calc(100% - 20px);
+      }
+
+      .grid-intro {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .grid-intro div:last-child {
+        justify-self: center;
+      }
+
+      .roll-img {
+        margin: 30px auto 0px auto;
+        top: 0;
+        padding: 30px 108px 30px 108px;
+      }
+
+      #gul-kasse {
+        padding: 20px;
+      }
+
+      .heading-text,
+      .obs-text {
+        margin-right: 10px;
+      }
+    }
+  </style>
+</Layout>

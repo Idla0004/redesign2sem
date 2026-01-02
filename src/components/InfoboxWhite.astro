@@ -1,0 +1,25 @@
+<section class="InfoboxWhite">
+  <div class="Infobox">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .InfoboxWhite {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .Infobox {
+    background-color: #ffffff;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+   @media (max-width: 1000px) {
+    .Infobox {
+      padding: 20px;
+    }
+</style>

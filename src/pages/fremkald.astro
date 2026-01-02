@@ -3,7 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import "../css/general.css";
 import filmimg from "../img/filmrulle.webp";
 import CTAbtn from "../components/CTAbtn.astro";
-import Priskort from "../components/Priskort.astro";
+import PrisCard from "../components/Priskort.astro";
+const endpoint =
+  "https://wvrvzqmqqflajhvaytpl.supabase.co/rest/v1/fremkald_priser?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2cnZ6cW1xcWZsYWpodmF5dHBsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzNTA0MjksImV4cCI6MjA4MDkyNjQyOX0.Fvg2ap5vq5HtKijdr2QiXsi_V7SSZUM2YKozBCd8kjw";
+
+const options = {
+  method: "GET",
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(endpoint, options).then((res) => res.json());
 ---
 
 <Layout>
@@ -37,7 +50,74 @@ import Priskort from "../components/Priskort.astro";
       </div>
     </div>
 
-    <Priskort />
+    <section class="prisliste-container">
+      <div id="film-pris">
+        <PrisCard
+          data={data}
+          headline="Film"
+          engangskamera="Engangskamera: 10 Kr ekstra"
+          information="Ved APS - Spørg i butikken for pris"
+          subCategories={[
+            {
+              kategori: "135mm",
+              headline: "135 mm:",
+              procestime: "Behandlingstid: 1-2 dage",
+            },
+            {
+              kategori: "120mm",
+              headline: "120 mm:",
+              procestime: "Behandlingstid: 1-2 dage",
+            },
+            {
+              kategori: "E6",
+              headline: "E6:",
+              procestime: "Behandlingstid: 3-5 dage",
+            },
+          ]}
+        />
+      </div>
+    </section>
+
+    <section class="prisliste-container">
+      <div id="digital-pris">
+        <PrisCard
+          data={data}
+          headline="Fra digital medie (smartphone, usb...)"
+          engangskamera=""
+          underline=""
+          subCategories={[
+            {
+              kategori: "Digitalt Medie",
+              headline: "Digitale billeder til papirfotos",
+              procestime: "1-2 dage",
+            },
+          ]}
+        />
+      </div>
+    </section>
+
+    <section class="prisliste-container">
+      <div id="video-pris">
+        <PrisCard
+          data={data}
+          headline="Båndvideo"
+          engangskamera=""
+          underline=""
+          subCategories={[
+            {
+              kategori: "VHS til DVD (eller usb)",
+              headline: "VHS til DVD (eller usb)",
+              procestime: "1-2 dage",
+            },
+            {
+              kategori: "Smal film til digitalt",
+              headline: "Smal film til digitalt",
+              procestime: "1-2 dage",
+            },
+          ]}
+        />
+      </div>
+    </section>
 
     <section id="gul-kasse">
       <h3>FILM TIL DIT KAMERA</h3>

@@ -6,45 +6,61 @@ import instalogo from "../img/iglogoblue.webp";
 ---
 
 <section class="grid_1-3">
-  <div id="aabningstider">
+  <div class="aabningstider">
     <h3>ÅBNINGSTIDER</h3>
-    <div id="tid-info">
-      <div class="dage">
-        <p>Mandag</p>
-        <p>Tirsdag</p>
-        <p>Onsdag</p>
-        <p>Torsdag</p>
-        <p>Fredag</p>
-        <p>Lørdag</p>
-        <p>Søndag</p>
+    <dl>
+      <div>
+        <dt>Mandag</dt>
+        <dd>9.00 - 17.30</dd>
       </div>
-      <div class="tider">
-        <p>9.00 - 17.30</p>
-        <p>9.00 - 17.30</p>
-        <p>9.00 - 17.30</p>
-        <p>9.00 - 17.30</p>
-        <p>9.00 - 18:00</p>
-        <p>9.00 - 13:00</p>
-        <p>LUKKET</p>
+      <div>
+        <dt>Tirsdag</dt>
+        <dd>9.00 - 17.30</dd>
       </div>
-    </div>
+      <div>
+        <dt>Onsdag</dt>
+        <dd>9.00 - 17.30</dd>
+      </div>
+      <div>
+        <dt>Torsdag</dt>
+        <dd>9.00 - 17.30</dd>
+      </div>
+      <div>
+        <dt>Fredag</dt>
+        <dd>9.00 - 18.00</dd>
+      </div>
+      <div>
+        <dt>Lørdag</dt>
+        <dd>9.00 - 13.00</dd>
+      </div>
+      <div>
+        <dt>Søndag</dt>
+        <dd>LUKKET</dd>
+      </div>
+    </dl>
   </div>
   <div id="lokation-info">
     <a href="/"><img src={kort.src} alt="kort" id="kort" /></a>
-
-    <p>Frederiksborgvej 84, 2400 København NV</p>
+    <address class="adresse" aria-label="Adresse til butikken">
+      Frederiksborgvej 84, 2400 København NV
+    </address>
   </div>
   <div id="kontakt-info">
     <div class="info-kontakt">
       <h3>KONTAKT OS</h3>
       <p>
-        Telefon: <a href="tel:+4535818071" class="kontakt-link"
-          >+45 35 81 80 71</a
+        Telefon: <a
+          href="tel:+4535818071"
+          class="kontakt-link"
+          aria-label="Ring til butikken">+45 35 81 80 71</a
         >
       </p>
       <p>
         E-mail:
-        <a href="mailto:post@nv-foto.dk" class="kontakt-link">post@nv-foto.dk</a
+        <a
+          href="mailto:post@nv-foto.dk"
+          class="kontakt-link"
+          aria-label="Kontakt os på mail">post@nv-foto.dk</a
         >
       </p>
     </div>
@@ -56,7 +72,7 @@ import instalogo from "../img/iglogoblue.webp";
         class="ig-link"
       >
         <img src={instalogo.src} alt="instagram logo" id="IGlogo" />
-        <p class="insta-tag">nv.foto.dk</p>
+        <p class="insta-tag" aria-label="Følg os på Instagram">nv.foto.dk</p>
       </a>
     </div>
     <div><a href="/"><img src={logo.src} alt="logo" id="logo" /></a></div>
@@ -64,48 +80,57 @@ import instalogo from "../img/iglogoblue.webp";
 </section>
 
 <style>
-  #logo {
-    max-width: 170px;
-    margin-top: 30px;
+  .grid_1-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    align-items: normal;
+    padding: 2rem 3rem;
+    background-color: #091f5b;
+  }
+
+  p,
+  li,
+  ul,
+  dl,
+  address {
+    color: white;
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: clamp(18px, 3vw, 22px);
+    margin-bottom: 1rem;
+    color: white;
+    letter-spacing: 2px;
+  }
+
+  .aabningstider {
+    color: white;
+    font-family: montserrat-r;
+    grid-column: 1;
+  }
+
+  .aabningstider dl div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .aabningstider dt {
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+
+  .aabningstider dd {
+    width: 101px;
+    text-align: left;
   }
 
   #kort {
     max-width: 100%;
     max-height: 200px;
     margin-top: 20px;
-  }
-
-  p,
-  li,
-  ul {
-    color: white;
-    font-size: 18px;
-  }
-
-  section {
-    padding: 2rem 3rem;
-    background-color: #091f5b;
-  }
-
-  .grid_1-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-    align-items: normal;
-  }
-
-  #tid-info {
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-  }
-
-  #tid-info p {
-    margin: 12px 0 0 0;
-  }
-
-  .dage p {
-    font-family: montserrat-m;
   }
 
   #lokation-info {
@@ -117,21 +142,23 @@ import instalogo from "../img/iglogoblue.webp";
     grid-column: 3;
   }
 
-  #insta {
-    background-color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    margin: 20px 0 0 0;
-  }
-
-  #aabningstider {
-    grid-column: 1;
+  .adresse {
+    font-family: montserrat-r;
+    font-style: normal;
+    margin-top: 20px;
   }
 
   .kontakt-link {
     text-decoration: none;
     color: white;
     font-family: montserrat-m;
+  }
+
+  #insta {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 20px 0 0 0;
   }
 
   .ig-link {
@@ -156,17 +183,32 @@ import instalogo from "../img/iglogoblue.webp";
     line-height: 0;
   }
 
-  h3 {
-    font-size: clamp(18px, 3vw, 22px);
-    margin-bottom: 10px;
-    color: white;
-    letter-spacing: 1px;
+  #logo {
+    max-width: 170px;
+    margin-top: 30px;
   }
 
   @media (max-width: 900px) {
     .grid_1-3 {
       grid-template-columns: 1fr;
       place-items: center;
+    }
+
+    p,
+    li,
+    ul,
+    dl,
+    .adresse {
+      text-align: center;
+      font-size: clamp(14px, 3vw, 18px);
+    }
+
+    .aabningstider dd {
+      width: clamp(78px, 17vw, 101px);
+    }
+
+    h3 {
+      text-align: center;
     }
 
     #aabningstider,
@@ -176,41 +218,31 @@ import instalogo from "../img/iglogoblue.webp";
       margin: 0 0 20px 0;
     }
 
+    #aabningstider dl {
+      margin: auto;
+    }
+
     #lokation-info {
-      margin: 20px;
+      margin-top: 20px;
       text-align: center;
     }
 
     #kort {
-      height: clamp(200px, 40vw, 250px);
+      height: clamp(150px, 40vw, 200px);
       margin-top: 0;
     }
 
-    p,
-    li,
-    ul {
-      text-align: center;
-      font-size: clamp(14px, 3vw, 18px);
-    }
-
-    h3 {
-      text-align: center;
-    }
-
-    #logo {
-      margin-bottom: 0;
+    .info-kontakt {
+      margin-bottom: 40px;
     }
 
     #insta {
       display: flex;
       flex-direction: row;
     }
-    #aabningstider p {
-      text-align: left;
-    }
 
-    .info-kontakt {
-      margin-bottom: 40px;
+    #logo {
+      margin-bottom: 0;
     }
   }
 </style>

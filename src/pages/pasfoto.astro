@@ -7,35 +7,37 @@ import InfoboxWhite from "../components/InfoboxWhite.astro";
 ---
 
 <Layout>
-  <section class="Passide">
+  <section class="Pas-side">
     <h1 class="Headline">PASFOTO</h1>
+    <article class="Pas-priser">
     <Pascard
       src={Pas.src}
+      alt="Illustration af et pas."
       H2="FÅ TAGET DIT PASFOTO HOS NV FOTO"
       Ptext1="Hos NV Foto står vi klar til at tage dit næste pasfoto, så du er klar til din næste rejse. Vi følger de danske retningslinjer for pas fotos."
       Ptext2="Skal du have taget pas fotografi med andre landes retningslinjer, skal du selv bringe information om landets gældende retningslinjer med, så vi kan sørge for, at dit billede er helt som det skal være."
-    />
+    /></article>
     <div class="Pasinfo-boxes">
     <InfoboxWhite>
           <h2>PASFOTOGRAFI PRISER:</h2>
-          <p class="Infotext">Dansk pas (35 x 45):</p>
-          <p class="price">75kr</p>
-          <p class="Infotext">Udenlandsk pas (Størrelse varierer):</p>
-          <p class="price">100kr</p>
+          <dl>
+  <dt class="info-text">Dansk pas (35 x 45):</dt>
+  <dd class="price">75kr</dd>
+  <dt class="info-text">Udenlandsk pas (Størrelse varierer):</dt>
+  <dd class="price">100kr</dd>
+</dl>
           <p>Ved udlandsk skal du selv medbringe krav/retningslinjer så vi er sikker på det er som det skal være.</p>
     </InfoboxWhite>
         <InfoboxWhite>
-          <h2>PASFOTOGRAFI TIDER:</h2>
-          <p class="Infotext">Mandag - Fredag:</p>
-          <ul class="Tidspunkt-liste">
-            <li>Børn: 9:00 - 16:00</li>
-            <li>Voksen: 9:00 - 17:00</li>
-          </ul>
-             <p class="Infotext">Lørdag:</p>
-          <ul class="Tidspunkt-liste">
-            <li>Børn: 9:00 - 11:30</li>
-            <li>Voksen: 9:00 - 12:00</li>
-          </ul>
+ <h2>PASFOTOGRAFI TIDER:</h2>
+    <dl>
+      <dt class="info-dage">Mandag - Fredag:</dt>
+      <dd class="info-tid">Børn: 9:00 - 16:00</dd>
+      <dd class="info-tid">Voksen: 9:00 - 17:00</dd>
+      <dt class="info-dage">Lørdag:</dt>
+      <dd class="info-tid">Børn: 9:00 - 11:30</dd>
+      <dd class="info-tid">Voksen: 9:00 - 12:00</dd>
+    </dl>
     </InfoboxWhite>
     </div>
   </section>
@@ -46,23 +48,32 @@ import InfoboxWhite from "../components/InfoboxWhite.astro";
     max-width: 1300px;
   }
 
-  .Passide {
+  dd, dl, dt {
+    font-family: montserrat-r;
+    font-size: 20px;
+  }
+  .Pas-side {
     margin: auto 130px;
     display: flex;
     flex-direction: column;
     justify-content: start;
   }
 
-  .Infotext {
+  .price, .info-tid {
+margin: 1rem 0;
+  }
+
+  .info-text, .info-dage {
     font-weight: bolder;
     margin-bottom: 0;
   }
 
-  .infoboxwhite {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+     .Pasinfo-boxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-bottom: 1rem;
+    }
   
     .Pasinfo-boxes h2 {
       font-size: clamp(24px, 2vw, 42px);
@@ -76,16 +87,10 @@ import InfoboxWhite from "../components/InfoboxWhite.astro";
       list-style-type: none;
     }
 
-   .Pasinfo-boxes {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-      margin-bottom: 1rem;
-    }
-
   @media screen and (max-width: 1200px) {
     .Pasinfo-boxes {
       grid-template-columns: 1fr;
+      gap: 2rem;
     }
   }
   @media screen and (max-width: 1000px) {
@@ -100,7 +105,7 @@ import InfoboxWhite from "../components/InfoboxWhite.astro";
   gap: 2rem;
 }
 
-    .Passide {
+    .Pas-side {
       margin: auto;
       width: calc(100% - 20px);
     }

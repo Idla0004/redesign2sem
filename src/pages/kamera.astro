@@ -35,30 +35,42 @@ import CTAbtn from "../components/CTAbtn.astro";
       </div>
     </div>
     <div id="camera-anchor">
-      <CameraCard
-        src={Pointnshoot.src}
-        hoverSrc={PointnshootHover.src}
-        headline="POINT AND SHOOT"
-        bodytext="Point-and-shoot kameraer er perfekte til dig, der vil fange øjeblikke uden at tænke for meget over indstillingerne på kameraet. De er kompakte, nemme at have med i tasken og klar til at skyde, så snart du trykker på knappen. Et lille, ukompliceret kamera med masser af charme og den særlige analoge følelse."
-      />
-      <CameraCardreverse
-        src={Oldschool.src}
-        hoverSrc={OldschoolHover.src}
-        headline="OLD SCHOOL ANALOG"
-        bodytext="Disse kameraer er for dig, der vil fordybe dig i selve fotografi-håndværket. Her er der tid til at tænke, indstille og skabe billeder med sjæl. Uanset om du er nybegynder eller erfaren, giver disse kameraer dig en ægte, ufiltreret oplevelse og resultater, der er værd at vente på. Billederne har sandt karakter, sjæl og et udtryk, du selv har formet helt fra starten."
-      />
-      <CameraCard
-        src={Engangskamera.src}
-        hoverSrc={EngangskameraHover.src}
-        headline="ENGANGSKAMERA"
-        bodytext="Engangskameraer er den nemmeste måde at tage analoge billeder på! Perfekt til fester, rejser og små hverdagseventyr, hvor det handler mere om stemningen end det perfekte skud. Ukompliceret, sjovt og altid autentisk."
-      />
-      <CameraCardreverse
-        src={Instax.src}
-        hoverSrc={InstaxHover.src}
-        headline="INSTAX"
-        bodytext="Instax er for dig, der vil fange livets små, sjove og uforglemmelige øjeblikke og have dem i hånden med det samme. Med sit ikoniske, kompakte design og farverige billeder er Instax perfekt til at skabe fysiske minder, der er klar til at blive sat på køleskabet, sat i rammer eller delt med venner. Ideelt til fester, rejser eller bare en hyggelig dag med vennerne."
-      />
+      <article class="camera-card">
+        <CameraCard
+          src={Pointnshoot.src}
+          alt="Point and Shoot kamera med kompakt design, perfekt til hverdagsbrug"
+          hoverSrc={PointnshootHover.src}
+          headline="POINT AND SHOOT"
+          bodytext="Point-and-shoot kameraer er perfekte til dig, der vil fange øjeblikke uden at tænke for meget over indstillingerne på kameraet. De er kompakte, nemme at have med i tasken og klar til at skyde, så snart du trykker på knappen. Et lille, ukompliceret kamera med masser af charme og den særlige analoge følelse."
+        />
+      </article>
+      <article class="camera-card">
+        <CameraCardreverse
+          src={Oldschool.src}
+          alt="Klassisk analogt spejlreflekskamera med manuelle indstillinger til avanceret fotografi."
+          hoverSrc={OldschoolHover.src}
+          headline="OLD SCHOOL ANALOG"
+          bodytext="Disse kameraer er for dig, der vil fordybe dig i selve fotografi-håndværket. Her er der tid til at tænke, indstille og skabe billeder med sjæl. Uanset om du er nybegynder eller erfaren, giver disse kameraer dig en ægte, ufiltreret oplevelse og resultater, der er værd at vente på. Billederne har sandt karakter, sjæl og et udtryk, du selv har formet helt fra starten."
+        />
+      </article>
+      <article class="camera-card">
+        <CameraCard
+          src={Engangskamera.src}
+          alt="Engangskamera med simpelt design, klar til brug uden behov for indstillinger."
+          hoverSrc={EngangskameraHover.src}
+          headline="ENGANGSKAMERA"
+          bodytext="Engangskameraer er den nemmeste måde at tage analoge billeder på! Perfekt til fester, rejser og små hverdagseventyr, hvor det handler mere om stemningen end det perfekte skud. Ukompliceret, sjovt og altid autentisk."
+        />
+      </article>
+      <article class="camera-card">
+        <CameraCardreverse
+          src={Instax.src}
+          alt="Instax øjebliksbilledkamera med kompakt design, der udskriver billeder med det samme."
+          hoverSrc={InstaxHover.src}
+          headline="INSTAX"
+          bodytext="Instax er for dig, der vil fange livets små, sjove og uforglemmelige øjeblikke og have dem i hånden med det samme. Med sit ikoniske, kompakte design og farverige billeder er Instax perfekt til at skabe fysiske minder, der er klar til at blive sat på køleskabet, sat i rammer eller delt med venner. Ideelt til fester, rejser eller bare en hyggelig dag med vennerne."
+        />
+      </article>
     </div>
     <div class="infoboxes-container" id="film-anchor">
       <InfoBox>
@@ -90,14 +102,15 @@ import CTAbtn from "../components/CTAbtn.astro";
         <p>På forhånd, tak!</p>
       </InfoBox>
     </div>
-    <div id="tilbehor-anchor">
+    <article id="tilbehor-anchor">
       <CameraCard
         src={Tilbehor.src}
+        alt="Kamera blitz tilbehør, til at sætte på toppen af kamera"
         hoverSrc={Tilbehorhover.src}
         headline="KAMERA TILBEHØR"
         bodytext="Hos NV Foto finder du alt det tilbehør, der gør din fotografoplevelse endnu bedre. Uanset om du leder efter det perfekte objektiv, en UV-linse, en blitz, eller en solidt tripod, vi har det, der gør dit kamera endnu mere alsidigt. Kom forbi og udforsk, hvordan det rette tilbehør kan forvandle dine øjeblikke til noget ekstraordinært."
       />
-    </div>
+    </article>
   </section></Layout
 >
 

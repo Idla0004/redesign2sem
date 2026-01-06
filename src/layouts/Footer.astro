@@ -5,7 +5,7 @@ import logo from "../img/NVFotologo.webp";
 import instalogo from "../img/iglogoblue.webp";
 ---
 
-<section class="grid_1-3">
+<section class="footer-grid">
   <div class="aabningstider">
     <h3>ÅBNINGSTIDER</h3>
     <dl>
@@ -56,8 +56,7 @@ import instalogo from "../img/iglogoblue.webp";
         >
       </p>
       <p>
-        E-mail:
-        <a
+        E-mail: <a
           href="mailto:post@nv-foto.dk"
           class="kontakt-link"
           aria-label="Kontakt os på mail">post@nv-foto.dk</a
@@ -65,13 +64,13 @@ import instalogo from "../img/iglogoblue.webp";
       </p>
     </div>
     <h3>FØLG OS</h3>
-    <div id="insta">
+    <div id="instagram-info">
       <a
         href="https://www.instagram.com/nv.foto.dk/"
         target="_blank"
         class="ig-link"
       >
-        <img src={instalogo.src} alt="instagram logo" id="IGlogo" />
+        <img src={instalogo.src} alt="instagram logo" id="ig-logo" />
         <p class="insta-tag" aria-label="Følg os på Instagram">nv.foto.dk</p>
       </a>
     </div>
@@ -80,7 +79,7 @@ import instalogo from "../img/iglogoblue.webp";
 </section>
 
 <style>
-  .grid_1-3 {
+  .footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
@@ -157,7 +156,7 @@ import instalogo from "../img/iglogoblue.webp";
     font-family: montserrat-m;
   }
 
-  #insta {
+  #instagram-info {
     background-color: white;
     border-radius: 10px;
     margin: 20px 0 0 0;
@@ -173,7 +172,7 @@ import instalogo from "../img/iglogoblue.webp";
     margin: auto;
   }
 
-  #IGlogo {
+  #ig-logo {
     max-width: 50px;
     margin: auto;
   }
@@ -192,7 +191,7 @@ import instalogo from "../img/iglogoblue.webp";
   }
 
   @media (max-width: 900px) {
-    .grid_1-3 {
+    .footer-grid {
       grid-template-columns: 1fr;
       place-items: center;
     }
@@ -239,7 +238,7 @@ import instalogo from "../img/iglogoblue.webp";
       margin-bottom: 40px;
     }
 
-    #insta {
+    #instagram-info {
       display: flex;
       flex-direction: row;
     }

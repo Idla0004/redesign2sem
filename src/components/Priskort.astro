@@ -17,8 +17,8 @@ interface Props {
   data: Item[];
   headline: string;
   subCategories: SubCategory[];
-  engangskamera?: string;
   underline?: string;
+  engangskamera?: string;
   information?: string;
 }
 
@@ -51,7 +51,7 @@ const { data, headline, subCategories, engangskamera, information, underline } =
               ))}
             {subCategory.kategori === "Digitalt Medie" && (
               <div class="prisliste-item">
-               <span class="liste-titel-knap">Ved specielle mål</span>
+            <span class="liste-titel-knap">Ved specielle mål</span>
                 <span class="liste-pris">
                   <a
                     href="mailto:kontakt@dinmail.dk"

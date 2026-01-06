@@ -3,8 +3,8 @@ import "../css/general.css";
 import kort from "../img/map.webp";
 import logo from "../img/NVFotologo.webp";
 import instalogo from "../img/iglogoblue.webp";
-import phone from "..img/phoneicon.webp";
-import mail from "..img/mailicon.webp";
+import phone from "../img/phoneicon.webp";
+import mail from "../img/mailicon.webp";
 ---
 
 <section class="footer-grid">
@@ -48,35 +48,36 @@ import mail from "..img/mailicon.webp";
     </address>
   </div>
   <div id="kontakt-info">
-    <div class="info-kontakt">
-      <h3>KONTAKT OS</h3>
-      <p>
-        Telefon: <a
-          href="tel:+4535818071"
-          class="kontakt-link"
-          aria-label="Ring til butikken">+45 35 81 80 71</a
-        >
-      </p>
-      <img src={mail.src} alt="instagram logo" id="ig-logo" />
+    <h3>KONTAKT OS</h3>
+    <div class="tlf-kontakt">
+      <img src={phone.src} alt="Phone icon" class="contact-icons" />
+      <a
+        href="tel:+4535818071"
+        class="kontakt-link"
+        aria-label="Ring til butikken">+45 35 81 80 71</a
+      >
+    </div>
+    <div class="mail-kontakt">
+      <img src={mail.src} alt="Mail icon" class="contact-icons" />
       <a
         href="mailto:post@nv-foto.dk"
         class="kontakt-link"
         aria-label="Kontakt os på mail">post@nv-foto.dk</a
       >
     </div>
+    <h3>FØLG OS</h3>
+    <div id="instagram-info">
+      <a
+        href="https://www.instagram.com/nv.foto.dk/"
+        target="_blank"
+        class="ig-link"
+      >
+        <img src={instalogo.src} alt="instagram logo" id="ig-logo" />
+        <p class="insta-tag" aria-label="Følg os på Instagram">nv.foto.dk</p>
+      </a>
+    </div>
+    <div><a href="/"><img src={logo.src} alt="logo" id="logo" /></a></div>
   </div>
-  <h3>FØLG OS</h3>
-  <div id="instagram-info">
-    <a
-      href="https://www.instagram.com/nv.foto.dk/"
-      target="_blank"
-      class="ig-link"
-    >
-      <img src={instalogo.src} alt="instagram logo" id="ig-logo" />
-      <p class="insta-tag" aria-label="Følg os på Instagram">nv.foto.dk</p>
-    </a>
-  </div>
-  <div><a href="/"><img src={logo.src} alt="logo" id="logo" /></a></div>
 </section>
 
 <style>
@@ -155,6 +156,19 @@ import mail from "..img/mailicon.webp";
     text-decoration: none;
     color: white;
     font-family: montserrat-m;
+  }
+
+  .contact-icons {
+    max-width: 30px;
+  }
+
+  .tlf-kontakt,
+  .mail-kontakt {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
   }
 
   #instagram-info {

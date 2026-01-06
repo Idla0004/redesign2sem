@@ -3,6 +3,8 @@ import "../css/general.css";
 import kort from "../img/map.webp";
 import logo from "../img/NVFotologo.webp";
 import instalogo from "../img/iglogoblue.webp";
+import phone from "..img/phoneicon.webp";
+import mail from "..img/mailicon.webp";
 ---
 
 <section class="footer-grid">
@@ -55,27 +57,26 @@ import instalogo from "../img/iglogoblue.webp";
           aria-label="Ring til butikken">+45 35 81 80 71</a
         >
       </p>
-      <p>
-        E-mail: <a
-          href="mailto:post@nv-foto.dk"
-          class="kontakt-link"
-          aria-label="Kontakt os på mail">post@nv-foto.dk</a
-        >
-      </p>
-    </div>
-    <h3>FØLG OS</h3>
-    <div id="instagram-info">
+      <img src={mail.src} alt="instagram logo" id="ig-logo" />
       <a
-        href="https://www.instagram.com/nv.foto.dk/"
-        target="_blank"
-        class="ig-link"
+        href="mailto:post@nv-foto.dk"
+        class="kontakt-link"
+        aria-label="Kontakt os på mail">post@nv-foto.dk</a
       >
-        <img src={instalogo.src} alt="instagram logo" id="ig-logo" />
-        <p class="insta-tag" aria-label="Følg os på Instagram">nv.foto.dk</p>
-      </a>
     </div>
-    <div><a href="/"><img src={logo.src} alt="logo" id="logo" /></a></div>
   </div>
+  <h3>FØLG OS</h3>
+  <div id="instagram-info">
+    <a
+      href="https://www.instagram.com/nv.foto.dk/"
+      target="_blank"
+      class="ig-link"
+    >
+      <img src={instalogo.src} alt="instagram logo" id="ig-logo" />
+      <p class="insta-tag" aria-label="Følg os på Instagram">nv.foto.dk</p>
+    </a>
+  </div>
+  <div><a href="/"><img src={logo.src} alt="logo" id="logo" /></a></div>
 </section>
 
 <style>
